@@ -18,5 +18,5 @@
     "trailing": true,
     "smarttabs": true,
     "jquery": true,
-    "globals": { "BusinessOccupational": false }
+    "globals": { "BusinessOccupational": false, "BigNumber": false }
 }
