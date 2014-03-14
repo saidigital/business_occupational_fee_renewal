@@ -79,7 +79,7 @@ var BusinessOccupational = (function(){
       return round((worker.minbracket + (worker.rate * (workers - worker.bracketminimum))), 2);
     },
     calculateTotal: function(revenue, workers){
-      return this.calculateRegistrationFee() + this.calculateGrossRevenue(revenue) + this.calculateWorkerRate(workers);
+      return round(this.calculateRegistrationFee() + this.calculateGrossRevenue(revenue) + this.calculateWorkerRate(workers), 2);
     }
 
   };
