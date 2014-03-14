@@ -34,13 +34,33 @@
                 <h3 class="text-muted">Business Occupational Fee Renewal Form</h3>
             </div>
 
-            <div class="jumbotron">
-            </div>
+            <form class="form-horizontal">
+                <fieldset>
+                    <legend>Enter Your Data</legend>
 
-            <div class="row marketing">
-                <div class="col-lg-6">
-                </div>
-            </div>
+                    <!-- Gross Revenue -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="gross_revenue">2013 Gross Revenue</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input id="gross_revenue" name="gross_revenue" class="form-control" placeholder="0.00" type="text" required="">
+                            </div>
+                            <p class="help-block">Your gross revenue for 2013</p>
+                        </div>
+                    </div>
+
+                    <!-- Number of Workers -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="number_of_workers">Number Of Workers</label>  
+                        <div class="col-md-4">
+                            <input id="number_of_workers" name="number_of_workers" type="text" placeholder="0" class="form-control input-md" required="">
+                            <span class="help-block">The number of workers in your company</span>  
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
 
             <div class="footer">
                 <p><span class="glyphicon glyphicon-heart"></span> from SAI Digital</p>
