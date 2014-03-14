@@ -34,4 +34,12 @@ var BusinessOccupational = (function(){
     {'min':92000000, 'max':Infinity, 'rate':0.193, 'minbracket':24931.53}
   ];
 
+  var workerRate = [
+    {'min':0, 'max':2, 'rate':42.98, 'minbracket':0.00},
+    {'min':3, 'max':9, 'rate':21.51, 'minbracket':107.51},
+    {'min':10, 'max':99, 'rate':18.24, 'minbracket':254.76},
+    {'min':100, 'max':499, 'rate':15.06, 'minbracket':1896.58},
+    {'min':500, 'max':Infinity, 'rate':10.74, 'minbracket':7913.25}
+  ];
+
 }());
