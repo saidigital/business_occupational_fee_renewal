@@ -50,12 +50,21 @@
                         </div>
                     </div>
 
-                    <!-- Number of Workers -->
+                    <!-- Number of Fulltime Workers -->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="number_of_workers">Number Of Workers</label>  
+                        <label class="col-md-4 control-label" for="number_of_fulltime_workers">Number Of Full Time Workers</label>  
                         <div class="col-md-4">
-                            <input id="number_of_workers" name="number_of_workers" type="text" placeholder="0" class="form-control input-md" required="">
-                            <span class="help-block">The number of workers in your company</span>  
+                            <input id="number_of_fulltime_workers" name="number_of_fulltime_workers" type="text" placeholder="0" class="form-control input-md" required="">
+                            <span class="help-block">The number of full time workers in your company</span>  
+                        </div>
+                    </div>
+
+                    <!-- Number of Parttime Workers -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="number_of_parttime_workers">Number Of Part Time Workers</label>  
+                        <div class="col-md-4">
+                            <input id="number_of_parttime_workers" name="number_of_parttime_workers" type="text" placeholder="0" class="form-control input-md" required="">
+                            <span class="help-block">The number of part time workers in your company</span>  
                         </div>
                     </div>
 
@@ -67,15 +76,15 @@
             </div>
 
             <div class="row">
-                <div class="col-md-12">Gross Revenue:<span id="gross_revenue"></span></div>
+                <div class="col-md-12">Gross Revenue:<span id="gross_revenue_calc"></span></div>
             </div>
 
             <div class="row">
-                <div class="col-md-12">Worker Tax:<span id="worker_tax"></span></div>
+                <div class="col-md-12">Worker Tax: <span id="worker_tax_calc"></span></div>
             </div>
 
             <div class="row">
-                <div class="col-md-12">Business Improvement District (BID):<span id="bid"></span></div>
+                <div class="col-md-12">Total: <span id="total_calc"></span></div>
             </div>
 
             <div class="footer">
@@ -114,6 +123,10 @@
         <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
         <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
         <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js({app,.tmp}) scripts/business_occupational.js -->
+        <script src="scripts/business_occupational.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
