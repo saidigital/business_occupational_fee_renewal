@@ -44,7 +44,7 @@
                         <div class="col-md-4">
                             <div class="input-group">
                                 <span class="input-group-addon">$</span>
-                                <input id="gross_revenue" name="gross_revenue" class="form-control" placeholder="0.00" type="text" required="">
+                                <input id="gross_revenue" name="gross_revenue" class="form-control" placeholder="0.00" type="text">
                             </div>
                             <p class="help-block">Your gross revenue for 2013</p>
                         </div>
@@ -54,7 +54,7 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="number_of_fulltime_workers">Number Of Full Time Workers</label>  
                         <div class="col-md-4">
-                            <input id="number_of_fulltime_workers" name="number_of_fulltime_workers" type="text" placeholder="0" class="form-control input-md" required="">
+                            <input id="number_of_fulltime_workers" name="number_of_fulltime_workers" type="text" placeholder="0" class="form-control input-md">
                             <span class="help-block">The number of full time workers in your company</span>  
                         </div>
                     </div>
@@ -63,11 +63,17 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="number_of_parttime_workers">Number Of Part Time Workers</label>  
                         <div class="col-md-4">
-                            <input id="number_of_parttime_workers" name="number_of_parttime_workers" type="text" placeholder="0" class="form-control input-md" required="">
+                            <input id="number_of_parttime_workers" name="number_of_parttime_workers" type="text" placeholder="0" class="form-control input-md">
                             <span class="help-block">The number of part time workers in your company</span>  
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="submit"></label>
+                        <div class="col-md-4">
+                            <button type="submit" name="submit" id="submit" class="btn btn-inverse">Submit</button>
+                        </div>
+                    </div>
                 </fieldset>
             </form>
 
@@ -98,8 +104,8 @@
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap.js"></script>
-        <script src="bower_components/jquery-nod/nod.js"></script>
         <!-- endbower -->
+        <script src="bower_components/bignumber.js/bignumber.js"></script>
         <!-- endbuild -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
