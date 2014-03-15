@@ -90,6 +90,16 @@ var BusinessOccupational = (function(){
       var gross = this.calculateGrossRevenue(revenue);
       var workerrate = this.calculateWorkerRate(workers);
       return fee.plus(gross).plus(workerrate);
+    },
+    getCalculations: function(gross, fulltime, parttime){
+      var bignumfull = new BigNumber(fulltime);
+      var bignumpart = new BigNumber(parttime);
+      var numworkers = bignumpart.dividedBy(2).plus(bignumfull);
+      var registrationfee = this.calculateRegistrationFee().toString();
+      var grossrevenue = this.calculateGrossRevenue(gross).toString();
+      var workerrate = this.calculateWorkerRate(numworkers).toString();
+      var total = this.calculateTotal(gross, numworkers).toString();
+      return {'registrationfee': registrationfee, 'grossrevenue': grossrevenue, 'workertax': workerrate, 'total': total};
     }
 
   };
