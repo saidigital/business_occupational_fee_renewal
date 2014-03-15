@@ -48,18 +48,22 @@ var BusinessOccupational = (function(){
   ];
 
   function findGrossRevenueBracket(revenue){
+    var bignumrevenue = new BigNumber(revenue);
+
     for (var i = 0; i < grossRevenueBracket.length; i++) {
       var bracket = grossRevenueBracket[i];
-      if (revenue >= bracket.min && revenue <= bracket.max){
+      if (bignumrevenue.gte(bracket.min) && bignumrevenue.lte(bracket.max)){
         return bracket;
       }
     }
   }
 
   function findWorkerRate(workers){
+    var bignumworkers = new BigNumber(workers);
+
     for (var i = 0; i < workerRate.length; i++) {
       var worker = workerRate[i];
-      if (workers >= worker.min && workers <= worker.max){
+      if (bignumworkers.gte(worker.min) && bignumworkers.lte(worker.max)){
         return worker;
       }
     }
