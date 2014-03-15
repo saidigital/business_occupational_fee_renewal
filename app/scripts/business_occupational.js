@@ -95,10 +95,10 @@ var BusinessOccupational = (function(){
       var bignumfull = new BigNumber(fulltime);
       var bignumpart = new BigNumber(parttime);
       var numworkers = bignumpart.dividedBy(2).plus(bignumfull);
-      var registrationfee = this.calculateRegistrationFee().toString();
-      var grossrevenue = this.calculateGrossRevenue(gross).toString();
-      var workerrate = this.calculateWorkerRate(numworkers).toString();
-      var total = this.calculateTotal(gross, numworkers).toString();
+      var registrationfee = this.calculateRegistrationFee().toFixed(2);
+      var grossrevenue = this.calculateGrossRevenue(gross).toFixed(2);
+      var workerrate = this.calculateWorkerRate(numworkers).toFixed(2);
+      var total = this.calculateTotal(gross, numworkers).toFixed(2);
       return {'registrationfee': registrationfee, 'grossrevenue': grossrevenue, 'workertax': workerrate, 'total': total};
     }
 
