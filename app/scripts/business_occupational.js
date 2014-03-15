@@ -69,26 +69,27 @@ var BusinessOccupational = (function(){
     }
   }
 
-  function round(num, decs){
-    return parseFloat(num.toFixed(decs));
-  }
-
   return {
 
     calculateRegistrationFee: function(){
       return registrationFee;
     },
     calculateGrossRevenue: function(revenue){
+      var bignumrevenue = new BigNumber(revenue);
       var bracket = findGrossRevenueBracket(revenue);
-      return (bracket.minbracket + (bracket.rate * (revenue - bracket.bracketminimum) / 1000), 2);
+      return bracket.rate.times(bignumrevenue.minus(bracket.bracketminimum)).dividedBy(1000).plus(bracket.minbracket).round(2);
     },
 
     calculateWorkerRate: function(workers){
+      var bignumworkers = new BigNumber(workers);
       var worker = findWorkerRate(workers);
-      return round((worker.minbracket + (worker.rate * (workers - worker.bracketminimum))), 2);
+      return worker.rate.times(bignumworkers.minus(worker.bracketminimum)).plus(worker.minbracket).round(2);
     },
     calculateTotal: function(revenue, workers){
-      return round(this.calculateRegistrationFee() + this.calculateGrossRevenue(revenue) + this.calculateWorkerRate(workers), 2);
+      var fee = this.calculateRegistrationFee();
+      var gross = this.calculateGrossRevenue(revenue);
+      var workerrate = this.calculateWorkerRate(workers);
+      return fee.plus(gross).plus(workerrate);
     }
 
   };
