@@ -47,42 +47,36 @@ var BusinessOccupational = (function(){
     bracketRow(500, Infinity, 10.74, 7913.25, 500)
   ];
 
-  function findGrossRevenueBracket(revenue){
-    var bignumrevenue = new BigNumber(revenue);
+  function findInBracket(val, bracketlisting){
+    var bignumval = new BigNumber(val);
 
-    for (var i = 0; i < grossRevenueBracket.length; i++) {
-      var bracket = grossRevenueBracket[i];
-      if (bignumrevenue.gte(bracket.min) && bignumrevenue.lte(bracket.max)){
+    for (var i = 0; i < bracketlisting.length; i++) {
+      var bracket = bracketlisting[i];
+      if (bignumval.gte(bracket.min) && bignumval.lte(bracket.max)){
         return bracket;
       }
     }
   }
 
-  function findWorkerRate(workers){
-    var bignumworkers = new BigNumber(workers);
-
-    for (var i = 0; i < workerRate.length; i++) {
-      var worker = workerRate[i];
-      if (bignumworkers.gte(worker.min) && bignumworkers.lte(worker.max)){
-        return worker;
-      }
-    }
-  }
-
   return {
-
+    _findGrossRevenueBracket: function(revenue) {
+      return findInBracket(revenue, grossRevenueBracket);
+    },
+    _findWorkerRate: function(workers) {
+      return findInBracket(workers, workerRate);
+    },
     calculateRegistrationFee: function(){
       return registrationFee;
     },
     calculateGrossRevenue: function(revenue){
       var bignumrevenue = new BigNumber(revenue);
-      var bracket = findGrossRevenueBracket(revenue);
+      var bracket = this._findGrossRevenueBracket(revenue);
       return bracket.rate.times(bignumrevenue.minus(bracket.bracketminimum)).dividedBy(1000).plus(bracket.minbracket).round(2);
     },
 
     calculateWorkerRate: function(workers){
       var bignumworkers = new BigNumber(workers);
-      var worker = findWorkerRate(workers);
+      var worker = this._findWorkerRate(workers);
       return worker.rate.times(bignumworkers.minus(worker.bracketminimum)).plus(worker.minbracket).round(2);
     },
     calculateTotal: function(revenue, workers){
