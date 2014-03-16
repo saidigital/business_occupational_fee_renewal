@@ -24,7 +24,7 @@ Building has been tested on Linux, and probably works on OS X.
 4. From the root of the cloned repository run: `bower install`
 
 
-To build a distributable directory with compressed assets, run `grunt build`.
+To build a distributable directory (called `dist` in the project root) with compressed assets, run `grunt`.
 
 To run a server with livereload, run `grunt serve`. This will open a browser for you, and any
 changes you make to the HTML/CSS/JS will be automatically reloaded in your browser.
