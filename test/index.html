@@ -18,9 +18,20 @@
     </script>
 
     <!-- include source files here... -->
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap.js"></script>
+    <!-- endbower -->
+    <script src="bower_components/bignumber.js/bignumber.js"></script>
+    <script src="bower_components/bootstrapValidator/dist/js/bootstrapValidator.js"></script>
+    <!-- endbuild -->
+    <!-- build:js({app,.tmp}) scripts/business_occupational.js -->
+    <script src="scripts/business_occupational.js"></script>
+    <!-- endbuild -->
 
     <!-- include spec files here... -->
-    <script src="spec/test.js"></script>
+    <script src="spec/business_occupational.js"></script>
 
     <script>mocha.run()</script>
 </body>
