@@ -1,5 +1,3 @@
-/* global describe, it */
-
 (function () {
   "use strict";
   describe('Business Occupational', function () {
@@ -35,6 +33,26 @@
     describe('#getCalculations()', function () {
       it('should be an object', function () {
         BusinessOccupational.getCalculations(0, 0, 0).should.be.a('object');
+      });
+
+      it('should have a registrationfee property', function () {
+        BusinessOccupational.getCalculations(0, 0, 0).should.have.property('registrationfee');
+      });
+
+      it('should have a grossrevenue property', function () {
+        BusinessOccupational.getCalculations(0, 0, 0).should.have.property('grossrevenue');
+      });
+
+      it('should have a workertax property', function () {
+        BusinessOccupational.getCalculations(0, 0, 0).should.have.property('workertax');
+      });
+
+      it('should have a total property', function () {
+        BusinessOccupational.getCalculations(0, 0, 0).should.have.property('total');
+      });
+
+      it('The registrationfee property should be 65.00', function () {
+        BusinessOccupational.getCalculations(0, 0, 0).registrationfee.should.equal('65.00');
       });
     });
   });
