@@ -1,4 +1,4 @@
-/* global describe, it */
+/* global describe, it, BusinessOccupational */
 (function () {
   'use strict';
   describe('Business Occupational', function () {

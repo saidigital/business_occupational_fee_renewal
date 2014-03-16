@@ -1,3 +1,4 @@
+/* exported BusinessOccupational */
 var BusinessOccupational = (function(){
   'use strict';
   var registrationFee = new BigNumber(65.0);
